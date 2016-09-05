@@ -20,7 +20,7 @@
 -images
     -prototype_id   :integer
     -image          :text
-    -number         :integer
+    -status         :integer
 
 -comments
     -comment        :text
