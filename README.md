@@ -47,6 +47,7 @@
 
 -image
     -belongs_to     :prototype
+    -enum %i(main sub)
 
 -comment
     -belongs_to     :prototype
