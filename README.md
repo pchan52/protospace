@@ -14,8 +14,8 @@
     -works      :text
     -profile    :text
     -avatar     :text
-    -email      :text
-    -password   :text
+    -email      :string
+    -password   :string
 
 -images
     -prototype_id   :integer
