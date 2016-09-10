@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160907110901) do
+ActiveRecord::Schema.define(version: 20160910092758) do
 
   create_table "prototypes", force: :cascade do |t|
     t.string   "name",        limit: 255
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20160907110901) do
     t.text   "avatar",   limit: 65535
     t.string "email",    limit: 255
     t.string "password", limit: 255
+    t.string "member",   limit: 255
   end
 
 end

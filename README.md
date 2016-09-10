@@ -16,6 +16,7 @@
     -avatar     :text
     -email      :string
     -password   :string
+    -member     :string
 
 -images
     -prototype_id   :integer
