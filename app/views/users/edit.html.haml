@@ -1,0 +1,32 @@
+.container.user-new
+  = form_for @user do |f|
+    .col-md-8.col-md-offset-2
+      %header.row.user-nav.row
+        .col-md-12
+          %h2 Edit Profile
+          .user-name_image.row
+            .user-name.col-md-10
+              = f.text_field :name, placeholder: "Username", autofocus: true, required: true
+            .user-image.col-md-2
+              = f.button "Cjange Image", class:"btn btn-primary"
+              .js-preview-image
+                = f.file_field :avatar
+          .user-email
+            = f.email_field :email, placeholder: "E-Mail", required: true
+          .user-password
+            = f.password_field :password, placeholder: "Password", required: true
+        .col-md-12
+          %h4 Member of
+          .user-user-member.row
+            .user-name.col-md-12
+              = f.text_field :member, placeholder: "Member", required: true
+          %h4 Profile
+          .user-user-profile.row
+            .user-name.col-md-12
+              = f.text_area :profile, placeholder: "profile", required: true
+          %h4 Works
+          .user-name_image.row
+            .user-name.col-md-12
+              = f.text_area :works, placeholder: "Works", cols: "30", rows: "4"
+      .row.text-center.user-btn
+        = f.submit "SAVE", class: "btn btn-lg btn-primary btn-block"
