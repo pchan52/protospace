@@ -19,8 +19,8 @@
               %li.list-group-item.col-md-4
                 .image-upload
                   .js-image-upload
-                    =prototype_image.file_field :image
-                    =prototype_image.hidden_field :status, value: 1
+                    = prototype_image.file_field :image
+                    = prototype_image.hidden_field :status, value: 1
       .row.proto-description
         .col-md-12
           = f.text_field :catch_copy, placeholder: "Catch Copy"
