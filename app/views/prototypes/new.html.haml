@@ -8,14 +8,14 @@
       .row
         .col-md-12
           .cover-image-upload
-            = f.fields_for :prototype_images, @main_image do |prototype_image|
+            = f.fields_for :prototype_image, @main_image do |prototype_image|
               .js-image-upload
-                =prototype_image.file_field :image
-                =prototype_image.hidden_field :status, value: 0
+                = prototype_image.file_field :image
+                = prototype_image.hidden_field :status, value: 0
         .col-md-12
           %ul.proto-sub-list.list-group
           - 3.times do |i|
-            = f.fields_for :prototype_images, @sub_images do |prototype_image|
+            = f.fields_for :prototype_image, @sub_images do |prototype_image|
               %li.list-group-item.col-md-4
                 .image-upload
                   .js-image-upload
