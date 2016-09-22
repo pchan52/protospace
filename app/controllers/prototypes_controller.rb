@@ -11,6 +11,11 @@ class PrototypesController < ApplicationController
 
   def create
     @prototype = Prototype.new(prototype_params)
+    if @prototype.save
+      redirect :root
+    else
+      redirect_to new_prototype_url
+    end
   end
 
   def show
