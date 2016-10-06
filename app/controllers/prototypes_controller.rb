@@ -7,12 +7,18 @@ class PrototypesController < ApplicationController
 
   def new
     @prototype = Prototype.new
+    @main_content = @prototype.prototype_images.build
+
+    3.times {
+      @sub_contents = @prototype.prototype_images.build
+    }
   end
 
   def create
-    @prototype = Prototype.new(prototype_params)
+    @prototype = current_user.prototypes.new(prototype_params)
+    binding.pry
     if @prototype.save
-      redirect :root
+      redirect_to :root
     else
       redirect_to new_prototype_url
     end
@@ -24,7 +30,7 @@ class PrototypesController < ApplicationController
 
   private
   def prototype_params
-    params.require(:prototype).permit(:name, :concept, :catch_copy, :likes_count, :user_id, prototype_images_attributes: [:prototype_id, :image, :status])
+    params.require(:prototype).permit(:name, :concept, :catch_copy, :user_id, prototype_images_attributes: [:id, :image, :status])
   end
 
 end

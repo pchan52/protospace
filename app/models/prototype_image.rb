@@ -1,7 +1,7 @@
 class PrototypeImage < ActiveRecord::Base
   belongs_to :prototype
   mount_uploader :image, PrototypeImageUploader
-  enum status: %i(main sub)
+  enum status: %i{main sub}
 
-  validates :image, :status, presence: true
+  validates  :status, presence: true
 end
