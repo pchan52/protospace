@@ -16,7 +16,6 @@ class PrototypesController < ApplicationController
 
   def create
     @prototype = current_user.prototypes.new(prototype_params)
-    binding.pry
     if @prototype.save
       redirect_to :root
     else
