@@ -18,6 +18,8 @@
         = image_tag("icon_heart.svg")
         Like
         %span.num 20
+      .btn.btn-default.navbar-btn
+        = link_to "Delete", prototype_path(@prototype), method: :delete
   .row
     .col-md-9
       = image_tag(@prototype.prototype_images.first.image, class: 'img-responsive')
@@ -29,7 +31,7 @@
   .row.proto-description
     .col-md-3
       %h4 Catch Copy
-      %p 
+      %p
       = @prototype.catch_copy
     .col-md-6
       %h4 Concept
