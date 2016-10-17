@@ -8,10 +8,7 @@ class PrototypesController < ApplicationController
   def new
     @prototype = Prototype.new
     @main_content = @prototype.prototype_images.build
-
-    3.times {
-      @sub_contents = @prototype.prototype_images.build
-    }
+    @sub_contents = 2.times { @prototype.prototype_images.build }
   end
 
   def create
@@ -24,7 +21,7 @@ class PrototypesController < ApplicationController
   end
 
   def show
-    @prototype = Prototype.find(params[:prototype_id])
+    @prototype = Prototype.find(params[:id])
   end
 
   private
