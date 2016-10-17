@@ -21,13 +21,11 @@
   .row
     .col-md-9
       = image_tag(@prototype.prototype_images.first.image, class: 'img-responsive')
-      / = image_tag("sample.png", class: 'img-responsive')
     .col-md-3
       %ul.proto-sub-list.list-group
       - @prototype.prototype_images.sub.each do |sub_image|
         %li.list-group-item
           = image_tag(sub_image.image, class: 'img-responsive')
-      / = image_tag("sample.png", class: 'img-responsive')
   .row.proto-description
     .col-md-3
       %h4 Catch Copy
