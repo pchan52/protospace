@@ -24,6 +24,16 @@ class PrototypesController < ApplicationController
     @prototype = Prototype.find(params[:id])
   end
 
+  def destroy
+    @prototype = Prototype.find(params[:id])
+    if @prototype.destroy
+      redirect_to :root
+    else
+      redirect_to action: 'show'
+    end
+  end
+
+
   private
   def prototype_params
     params.require(:prototype).permit(:name, :concept, :catch_copy, :user_id, prototype_images_attributes: [:id, :image, :status])
