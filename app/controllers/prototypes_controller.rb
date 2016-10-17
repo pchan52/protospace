@@ -9,9 +9,7 @@ class PrototypesController < ApplicationController
     @prototype = Prototype.new
     @main_content = @prototype.prototype_images.build
 
-    3.times {
-      @sub_contents = @prototype.prototype_images.build
-    }
+    @sub_contents = 2.times { @prototype.prototype_images.build }
   end
 
   def create

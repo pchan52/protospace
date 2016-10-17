@@ -14,7 +14,6 @@
                 = prototype_image.hidden_field :status, value: "main"
         .col-md-12
           %ul.proto-sub-list.list-group
-          - 3.times do |i|
             = f.fields_for :prototype_images, @sub_contents do |prototype_image|
               %li.list-group-item.col-md-4
                 .image-upload
