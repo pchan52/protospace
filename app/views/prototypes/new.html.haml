@@ -10,6 +10,7 @@
           .cover-image-upload
             = f.fields_for :prototype_images, @main_content do |prototype_image|
               .js-image-upload
+                = image_tag(prototype_image.object.image, class: 'img-responsive')
                 = prototype_image.file_field :image
                 = prototype_image.hidden_field :status, value: "main"
         .col-md-12
@@ -18,6 +19,7 @@
               %li.list-group-item.col-md-4
                 .image-upload
                   .js-image-upload
+                    = image_tag(prototype_image.object.image, class: 'img-responsive')
                     = prototype_image.file_field :image
                     = prototype_image.hidden_field :status, value: "sub"
       .row.proto-description
