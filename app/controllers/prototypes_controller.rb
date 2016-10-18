@@ -1,5 +1,6 @@
 class PrototypesController < ApplicationController
-  before_action :authenticate_user!, only: [:index, :new, :create, :show, :edit, :update]
+  before_action :authenticate_user!, except: :destory
+  before_action :set_prototype, only: %i(show edit update)
 
   def index
     @prototypes = Prototype.all
@@ -21,17 +22,14 @@ class PrototypesController < ApplicationController
   end
 
   def show
-    @prototype = Prototype.find(params[:id])
   end
 
   def edit
-    @prototype = Prototype.find(params[:id])
     @main_content = @prototype.prototype_images.first
     @sub_contents = @prototype.prototype_images.sub
   end
 
   def update
-    @prototype = Prototype.find(params[:id])
     if @prototype.update(prototype_params)
        redirect_to action: 'show'
     else
@@ -43,6 +41,10 @@ class PrototypesController < ApplicationController
   private
   def prototype_params
     params.require(:prototype).permit(:name, :concept, :catch_copy, :user_id, prototype_images_attributes: [:id, :image, :status])
+  end
+
+  def set_prototype
+    @prototype = Prototype.find(params[:id])
   end
 
 end
