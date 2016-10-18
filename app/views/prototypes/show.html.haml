@@ -9,8 +9,8 @@
           %h4#top-aligned-media.media-heading
             = @prototype.name
           .proto-user
-            = link_to "by #{@prototype.user.name}", user_path(@prototype.user)
-            %spam.degree = #{@prototype.user.member}
+            = link_to "by #{ @prototype.user.name }", user_path(@prototype.user)
+            %spam.degree = #{ @prototype.user.member }
 
     .col-md-6.text-right
       %button.btn.btn-default
@@ -42,9 +42,9 @@
       %h4 Tag List
       %ul.proto-tag-list.list-inline
         %li
-          %a{href: "#", class: "btn btn-default"} iPad
+          %a{ href: "#", class: "btn btn-default" } iPad
         %li
-          %a{href: "#", class: "btn bn-default"} wireframe
+          %a{ href: "#", class: "btn bn-default" } wireframe
   .row.proto-comments
     %h4.col-md-12
       Comments
@@ -57,7 +57,7 @@
         .media-body
           %h4#top-aligned-media.media-heading
             = @prototype.name
-            %a.anchorjs-link{href: "#top-aligned-media"}
+            %a.anchorjs-link{ href: "#top-aligned-media" }
               %span.anchorjs-icon
           %p Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
           %p Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
@@ -68,15 +68,15 @@
         .media-body
           %h4#middle-aligned-media.media-heading
             Middle aligned media
-            %a.anchorjs-link{href: "#middle-aligned-media"}
+            %a.anchorjs-link{ href: "#middle-aligned-media" }
               %span.anchorjs-icon
           %p Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
           %p Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.t
-      %form.form-inline{role: "form"}
+      %form.form-inline{ role: "form" }
         %h4 Write a comment
         .row
           .form-group.col-md-10
-            %textarea.form-control{placeholder: "Your comments", rows: "3"}
+            %textarea.form-control{ placeholder: "Your comments", rows: "3" }
           .form-group.col-md-2
             %button.btn.btn-primary Comment
 
