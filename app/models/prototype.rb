@@ -4,4 +4,8 @@ class Prototype < ActiveRecord::Base
   has_many :likes
   accepts_nested_attributes_for :prototype_images, allow_destroy: true, reject_if: proc { |attributes| attributes['image'].blank? }
   validates :name, :concept, :catch_copy, presence: true
+
+  def liked_user(user)
+    likes.find_by(user_id: user)
+  end
 end
