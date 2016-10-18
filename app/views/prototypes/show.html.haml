@@ -13,10 +13,8 @@
             %spam.degree = #{ @prototype.user.member }
 
     .col-md-6.text-right
-      %button.btn.btn-default
-        = image_tag("icon_heart.svg")
-        Like
-        %span.num 20
+      = render partial: 'likes/like', locals: { prototype: @prototype }
+    .col-md-6.text-right
       .extra-button
         - if user_signed_in? && (@prototype.user_id == current_user.id)
           .btn.btn-default.navbar-btn
