@@ -6,5 +6,6 @@ class User < ActiveRecord::Base
 
   has_many :prototypes
   has_many :likes
+  has_many :comments
   validates :name, :password, :email, presence: true
 end
