@@ -56,7 +56,8 @@ class PrototypesController < ApplicationController
     :user_id,
     :created_at,
     :likes_count,
-    prototype_images_attributes: [:id, :image, :status])
+    prototype_images_attributes: [:id, :image, :status]).merge(
+    tag_list: params[:prototype][:tag])
   end
 
   def set_prototype
