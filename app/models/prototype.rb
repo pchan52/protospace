@@ -8,6 +8,8 @@ class Prototype < ActiveRecord::Base
   acts_as_taggable_on :prototypes # prototype.prototype_list が追加される
   acts_as_taggable            # acts_as_taggable_on :tags のエイリアス
 
+  paginates_per 8
+
   def liked_user?(user)
     likes.find_by(user_id: user)
   end
