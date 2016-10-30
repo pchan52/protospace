@@ -3,7 +3,8 @@ class UsersController < ApplicationController
   before_action :get_user, only: [:show, :edit, :update]
 
   def show
-    @prototypes = @user.prototypes
+    @prototypes = @user.prototypes.page(params[:page])
+    @proto_count = @user.prototypes.count
   end
 
   def edit
