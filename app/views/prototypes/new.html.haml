@@ -7,7 +7,7 @@
             = f.text_field :name ,placeholder: "Title"
       .row
         .col-md-12
-          .cover-image-upload
+          .cover-image-upload.js-image-preview
             = f.fields_for :prototype_images, @main_content do |prototype_image|
               .js-image-upload
                 = image_tag(prototype_image.object.image, class: 'img-responsive')
@@ -17,11 +17,10 @@
           %ul.proto-sub-list.list-group
             = f.fields_for :prototype_images, @sub_contents do |prototype_image|
               %li.list-group-item.col-md-4
-                .image-upload
-                  .js-image-upload
-                    = image_tag(prototype_image.object.image, class: 'img-responsive')
-                    = prototype_image.file_field :image
-                    = prototype_image.hidden_field :status, value: "sub"
+                .image-upload.js-image-preview
+                  = image_tag(prototype_image.object.image, class: 'img-responsive')
+                  = prototype_image.file_field :image
+                  = prototype_image.hidden_field :status, value: "sub"
       .row.proto-description
         .col-md-12
           = f.text_field :catch_copy, placeholder: "Catch Copy"

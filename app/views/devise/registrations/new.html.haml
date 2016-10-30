@@ -8,7 +8,7 @@
           .user-name_image.row
             .user-name.col-md-10
               = f.text_field :name, autofocus:true, placeholder: "username", required: true
-            .user-image.col-md-2
+            .user-image.col-md-2.js-image-preview
               = f.button "Add Image", class:"btn btn-primary"
               .js-preview-image
                 = f.file_field :avatar
