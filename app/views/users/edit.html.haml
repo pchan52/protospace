@@ -8,7 +8,7 @@
             .user-name.col-md-10
               = f.text_field :name, placeholder: "Username", autofocus: true, required: true
             .user-image.col-md-2.js-image-preview{ style: "background-image: url(#{ current_user.avatar });" }
-              = f.button "Change Image", class:"btn btn-primary"
+              = f.button 'Change Image(), class:"btn btn-primary"
               .js-preview-image
                 = f.file_field :avatar
           .user-email
@@ -29,4 +29,4 @@
             .user-name.col-md-12
               = f.text_area :works, placeholder: "Works", cols: "30", rows: "4"
       .row.text-center.user-btn
-        = f.submit "SAVE", class: "btn btn-lg btn-primary btn-block"
+        = f.submit 'SAVE', class: "btn btn-lg btn-primary btn-block"

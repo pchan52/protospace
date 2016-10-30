@@ -45,7 +45,7 @@
       %ul.proto-tag-list.list-inline
         - @prototype.tag_list.each do |tag|
           %li
-            = link_to val, tag_path(tag), class: "btn btn-default"
+            = link_to eval, tag_path(tag), class: "btn btn-default"
   .row.proto-comments
     %h4.col-md-12
       Comments
