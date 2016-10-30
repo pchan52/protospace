@@ -7,4 +7,6 @@ class User < ActiveRecord::Base
   has_many :prototypes
   has_many :likes
   validates :name, :password, :email, presence: true
+
+  paginates_per 8
 end
