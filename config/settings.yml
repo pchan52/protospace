@@ -1,0 +1,14 @@
+defaults: &defaults
+
+development:
+  # <<: *defaults
+  key: 'protospace-ih'
+  secret: 'https://s3.amazonaws.com/protospace-ih'
+
+test:
+  key: 'protospace-ih'
+  secret: 'https://s3.amazonaws.com/protospace-ih'
+
+production:
+  key: 'protospace-ih'
+  secret: 'https://s3.amazonaws.com/protospace-ih'

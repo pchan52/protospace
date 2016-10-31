@@ -9,10 +9,10 @@ CarrierWave.configure do |config|
 
     case Rails.env
     when 'development'
-        config.fog_directory  = 'protospace-ih'
-        config.asset_host = 'https://s3.amazonaws.com/protospace-ih'
+        config.fog_directory  = Settings.development[:key]
+        config.asset_host = Settings.development[:secret]
     when 'production'
-        config.fog_directory  = 'protospace-ih'
-        config.asset_host = 'https://s3.amazonaws.com/protospace-ih'
+        config.fog_directory  = Settings.production[:key]
+        config.asset_host = Settings.development[:secret]
     end
 end
