@@ -4,11 +4,13 @@ FactoryGirl.define do
     image { fixture_file_upload("spec/fixtures/img/sample.png") }
 
     trait :main do
-      property :main
+      status :main
     end
 
     trait :sub do
-      property :sub
+      status   :sub
     end
+
+    prototype
   end
 end
