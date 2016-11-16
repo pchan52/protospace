@@ -4,5 +4,5 @@ class PrototypeImage < ActiveRecord::Base
   enum status: %i{main sub}
 
   validates :status, presence: true
-  validates :image,presence: true
+  validates :image, presence: true
 end
