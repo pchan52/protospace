@@ -12,7 +12,7 @@
             = link_to "by #{ @prototype.user.name }", user_path(@prototype.user)
             %spam.degree = #{ @prototype.user.member }
 
-    .col-md-6.text-right{ id: "like-buttons" }
+    .col-md-6.text-right#like_buttons
       = render partial: 'likes/like', locals: { prototype: @prototype, like: @like }
     .col-md-6.text-right
       .extra-button
@@ -49,7 +49,8 @@
   .row.proto-comments
     %h4.col-md-12
       Comments
-      %span.num (10)
+      %span#comments.num
+        = "(#{ @prototype.comments_count })"
     .col-md-8
       .media
         .media-left
