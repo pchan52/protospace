@@ -1,0 +1,3 @@
+$("#comments_count").text("(#{ @prototype.comments_count })");
+$("#comments_text").val("");
+$("#comments").html("#{ j render partial: 'comments/comment', collection: @comments}");
