@@ -58,7 +58,7 @@ describe PrototypesController do
         end
 
         it 'shows flash messages to show save the prototype successfully' do
-          expect(flash[:notice]).to eq "New prototype was successfully created"
+          expect(flash[:notice]).to eq 'New prototype was successfully created'
         end
       end
 
