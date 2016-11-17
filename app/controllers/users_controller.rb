@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 
   def update
     @user.update(update_params)
-    redirect_to user_url(current_user), flash:{ success: 'Success update' }
+    redirect_to :root, flash: { success: 'Success update' }
   end
 
   private
