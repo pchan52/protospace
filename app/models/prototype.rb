@@ -3,7 +3,7 @@ class Prototype < ActiveRecord::Base
   has_many :prototype_images
   has_many :likes, dependent: :destroy
   has_many :comments, dependent: :destroy
-  accepts_nested_attributes_for :prototype_images, allow_destroy: true, reject_if: proc { |attributes| attributes['image'].blank? }
+  accepts_nested_attributes_for :prototype_images, allow_destroy: true, reject_if: proc { |attributes| attributes['content'].blank? }
   validates :name, :concept, :catch_copy, presence: true
 
   acts_as_taggable_on :prototypes # prototype.prototype_list が追加される

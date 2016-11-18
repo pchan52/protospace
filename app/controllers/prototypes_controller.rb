@@ -1,5 +1,5 @@
 class PrototypesController < ApplicationController
-  before_action :authenticate_user!, except: :destory
+  before_action :authenticate_user!, except: :index
   before_action :set_prototype, only: %i(show edit update)
 
   def index
@@ -55,7 +55,7 @@ class PrototypesController < ApplicationController
     :user_id,
     :created_at,
     :likes_count,
-    prototype_images_attributes: [:id, :image, :status]).merge(
+    prototype_images_attributes: [:id, :content, :status]).merge(
     tag_list: params[:prototype][:tag])
   end
 
