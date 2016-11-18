@@ -40,9 +40,8 @@ feature 'User management' do
     fill_in 'Email address', with: login_user.email
     fill_in 'Password', with: login_user.password
     click_on 'Sing in'
-
-    visit destroy_user_session_path
-    # expect(page).to have_content 'Signed out successfully.'
+    click_on 'Logout'
+    expect(page).to have_content 'Signed out successfully.'
 
   end
 end
