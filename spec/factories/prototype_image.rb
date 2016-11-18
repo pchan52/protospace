@@ -10,7 +10,7 @@ FactoryGirl.define do
     trait :sub do
       status   :sub
     end
-
-    prototype
+    factory :main_content, traits: [:main]
+    factory :sub_content, traits: [:sub]
   end
 end
