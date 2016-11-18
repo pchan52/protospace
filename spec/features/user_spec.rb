@@ -13,24 +13,36 @@ feature 'User management' do
     fill_in 'Profile', with: user.profile
     fill_in 'Works', with: user.works
     click_on 'Sign_up'
-    expect(current_path).to eq root_path
+
     expect(page).to have_content 'Welcome! You have signed up successfully.'
   end
 
-  scenario 'Sign in and posting a new prototype' do
-    user = build(:user)
+  scenario 'Sign in and Post new prototype' do
+    login_user = create(:user)
     prototype = build(:prototype)
     visit root_path
     click_on 'GET START'
-    fill_in 'Email address', with: user.email
-    fill_in 'Password', with: user.password
+    fill_in 'Email address', with: login_user.email
+    fill_in 'Password', with: login_user.password
     click_on 'Sing in'
+
     visit new_prototype_path
     fill_in 'Title', with: prototype.name
-    attach_file 'prototype[prototype_images_attributes][0][image]', "#{Rails.root}/spec/fixtures/img/sample.jpg", visible: false
+    attach_file 'prototype[prototype_images_attributes][0][content]', "#{Rails.root}/spec/fixtures/img/sample.png", visible: false
     fill_in 'Catch Copy', with: prototype.catch_copy
     fill_in 'Concept', with: prototype.concept
-    click_on 'Post!'
-    expect(page).to have_content 'Your prototype was successfully posted'
+  end
+
+  scenario 'Sign out' do
+    login_user = create(:user)
+    visit root_path
+    click_on 'GET START'
+    fill_in 'Email address', with: login_user.email
+    fill_in 'Password', with: login_user.password
+    click_on 'Sing in'
+
+    visit destroy_user_session_path
+    # expect(page).to have_content 'Signed out successfully.'
+
   end
 end
