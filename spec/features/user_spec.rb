@@ -13,7 +13,6 @@ feature 'User management' do
     fill_in 'Profile', with: user.profile
     fill_in 'Works', with: user.works
     click_on 'Sign_up'
-
     expect(page).to have_content 'Welcome! You have signed up successfully.'
   end
 
@@ -42,6 +41,5 @@ feature 'User management' do
     click_on 'Sing in'
     click_on 'Logout'
     expect(page).to have_content 'Signed out successfully.'
-
   end
 end
